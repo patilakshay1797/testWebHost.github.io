@@ -1,0 +1,152 @@
+<div class="contactUsContainer">
+  <div class="contactUsImgContainer">
+    <div class="contactUsImage">
+      <div class="contactUsText">Home / Contact Us</div>
+    </div>
+  </div>
+
+  <div class="contactUsWays">
+    <div class="contactUsPhoneNumber">
+      <div class="phoneIcon">
+        <i class="fa-solid fa-phone-volume orangeText xxLargeText"></i>
+      </div>
+      <div class="callUsText mediumText">Reach Us by Phone</div>
+      <div class="contactUsPhoneNumbers mediumText">+91-8983467043</div>
+    </div>
+    <div class="contactUsPhoneNumber">
+      <div class="phoneIcon">
+        <i class="fa-solid fa-envelope orangeText xxLargeText"></i>
+      </div>
+      <div class="callUsText mediumText">write to us</div>
+      <div class="contactUsPhoneNumbers mediumText">
+        <a href="mailto:someone@example.com">vastudnydesigns@gmail.com</a>
+      </div>
+    </div>
+    <div class="contactUsPhoneNumber">
+      <div class="phoneIcon">
+        <i class="fa-solid fa-map-location-dot orangeText xxLargeText"></i>
+      </div>
+      <div class="callUsText mediumText">Meet Us at</div>
+      <div class="contactUsPhoneNumbers mediumText">
+        Saisarth Residency, Adarsh Nagar, New Sagavi, Pune. 411061
+      </div>
+    </div>
+  </div>
+  <div class="contactUsEmailContainer">
+    <div class="contactUsEmailWrapper">
+      <div class="contactUsEmailHeadingText bold">
+        <div>Let's Make Things Happen</div>
+        <div>Get in Touch.</div>
+      </div>
+      <div class="fillFormMsg smallText">
+        Please fill out the form below, and a member of our team will get back
+        to you as soon as possible.
+      </div>
+      <div class="emailJsContainer">
+        <div class="emailJsWrapper">
+          <form
+            onsubmit="event.preventDefault(); sendEmail();"
+            class="contactUsForm"
+          >
+            <div class="formInputFlexFields">
+              <div>
+                <input
+                  type="text"
+                  id="contactUsFormName"
+                  placeholder="Enter Your Name"
+                  oninput="validateContactUsInputField('contactUsFormName', 'contactUsNameErrorMsg')"
+                />
+                <div class="contactUsNameErrorMsg errMsg">
+                  Please fill out this field
+                </div>
+              </div>
+              <div>
+                <input
+                  type="email"
+                  id="contactUsFormEmail"
+                  placeholder="Enter Your Email"
+                  oninput="validateContactUsInputField('contactUsFormEmail', 'contactUsEmailErrorMsg')"
+                />
+                <div class="contactUsEmailErrorMsg errMsg">
+                  Please fill out this field
+                </div>
+              </div>
+              <div>
+                <input
+                  type=""
+                  id="contactUsFormNumber"
+                  placeholder="Phone Number"
+                  oninput="validateContactUsInputField('contactUsFormNumber', 'contactUsNumberErrorMsg')"
+                />
+                <div class="contactUsNumberErrorMsg errMsg">
+                  Please fill out this field
+                </div>
+              </div>
+              <div>
+                <input id="contactUsFormSubject" placeholder="Subject" />
+              </div>
+            </div>
+            <div>
+              <textarea
+                rows="10"
+                id="contactUsFormMessage"
+                placeholder="Message"
+                oninput="validateContactUsInputField('contactUsFormMessage', 'contactUsMsgErrorMsg')"
+              ></textarea>
+              <div class="contactUsMsgErrorMsg errMsg">
+                Please fill out this field
+              </div>
+            </div>
+            <button type="submit" class="contactUsFormSubmitButton">
+              Send Us a Message
+            </button>
+            <span class="contactUsSpinner">
+              <i class="fa-solid fa-spinner"></i>
+            </span>
+            <div class="contactUsEmailSendSuccessMsg">
+              Thank you for your message. It has been sent.
+            </div>
+            <div class="contactUsEmailSendErrMsg">
+              Sorry unable to send your message please try again...
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="socialMediaLinksContainer">
+      <div class="followUsText">Follow Us</div>
+      <div class="socialMediaLinks">
+        <div class="socialMediaIconWrapper">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <div class="socialMediaIconWrapper">
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
+        <div class="socialMediaIconWrapper">
+          <i class="fa-brands fa-x-twitter"></i>
+        </div>
+        <div class="socialMediaIconWrapper">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contactUsMapContainer">
+    <div class="locateUsMap headingText textCenter navyBlueText">
+      Locate Us on Map
+    </div>
+    <gmp-map
+      center="18.5774784631509, 73.81273193865158"
+      zoom="14"
+      map-id="DEMO_MAP_ID"
+      disable-default-ui="true"
+      street-view-control="false"
+    >
+      <gmp-advanced-marker
+        position="18.5774784631509, 73.81273193865158"
+        title="Vastundyn Designs, Sai Sarth Residency, New Sangvi, Pune"
+        gmpClickable="true"
+      ></gmp-advanced-marker>
+    </gmp-map>
+  </div>
+</div>

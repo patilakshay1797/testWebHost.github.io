@@ -1,0 +1,324 @@
+@media screen and (max-width: 992px) {
+  body {
+    /* overflow-x: unset; */
+  }
+  header {
+    display: none;
+  }
+  main {
+    padding: 0px 0px 50px 0px;
+  }
+  .homeContainer {
+    width: calc(100%);
+    margin: 0px;
+  }
+  .homeContainer .homeCarousel {
+    height: calc(100vh - 10rem);
+  }
+  .homeContainer .homeCarousel .homeImgContainer {
+    border-radius: 0;
+  }
+  .homeContainer .homeCarousel .homeImgContainer img {
+    z-index: 20;
+  }
+  .burgerIconBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 36px;
+    background-color: #d0a12c;
+    border-radius: 5px;
+    z-index: 20;
+  }
+  .burgerIconBtn .burgerIconBar {
+    height: 4px;
+    width: 30px;
+    background-color: #12223b;
+    border-radius: 3px;
+  }
+  .crossBurgerBar .burgerIconBar:nth-child(2) {
+    display: none;
+  }
+  .crossBurgerBar .burgerIconBar {
+    position: absolute;
+  }
+  .crossBurgerBar .burgerIconBar:first-child {
+    rotate: 45deg;
+    animation: burgerIconBarRotateFirstBar 0.5s ease-in-out forwards;
+  }
+  .crossBurgerBar .burgerIconBar:last-child {
+    rotate: -45deg;
+    animation: burgerIconBarRotateSecondBar 0.5s ease-in-out forwards;
+  }
+  .homeContainer .homeCarousel .homeImgContainer img {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    height: 40px;
+    width: 80px;
+  }
+  .homeContainer .homeCarousel .homeImgContainer .welcomeText {
+    font-size: 1.2rem;
+  }
+  .homeContainer .homeCarousel .homeImgContainer .purposeText {
+    font-size: 2.2rem;
+  }
+  .homeContainer .homeCarousel .homeImgContainer .purposeInfoText {
+    font-size: 1rem;
+  }
+  .homeContainer .homeCarousel .homeImgContainer:before {
+    content: "";
+    border-radius: 0;
+  }
+  .homeContainer .homeCarousel .homeWelcomeContainer .scrollDownOptionWrapper {
+    display: none;
+  }
+  .homeContainer .homeSubInfoWrapper {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfoImg {
+    width: 85%;
+    max-width: 95%;
+    min-width: 85%;
+    min-height: 350px !important;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo {
+    width: 80%;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo .lifetimeText {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo .lifeTimeTextInfo {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo .featuresTextWrapper {
+    padding: 15px;
+  }
+  .homeContainer
+    .homeSubInfoWrapper
+    .subInfo
+    .featuresTextWrapper
+    .featuresText {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 5px;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo .phoneLogo {
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px 0px 0px;
+  }
+  .homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo .contactInfo {
+    padding: 2px 0px;
+    font-size: 0.8rem;
+  }
+  .homeContainer
+    .homeSubInfoWrapper
+    .subInfo
+    .homeContactInfo
+    .contactInfo
+    .phoneNo {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .homeContainer .homeJobProjectsWrapper .homeDiverseProjects {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .homeContainer .homeJobProjectsWrapper .homeJobExperienceList {
+    display: flex;
+    flex-direction: column;
+  }
+  .homeContainer
+    .homeJobProjectsWrapper
+    .homeJobExperienceList
+    .eachJobProjectInList {
+    width: 85%;
+    height: 350px;
+  }
+  .footerContainer {
+    background-color: #12223b;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 25px;
+  }
+  .footerContainer .footerLogoName {
+    padding: 25px 25px 0px 25px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footerContainer .footerLogoName .footerCompanyName {
+    color: #ffb703;
+    font-size: 1.2rem;
+    margin-bottom: 0px;
+  }
+  .footerContainer .footerLogoName .footerLogoImg {
+    width: 125px;
+    height: 65px;
+  }
+  .footerContainer .footerServicesContainer {
+    padding: 0px 25px;
+  }
+  .footerContainer .footerServicesContainer .footerServices {
+    color: #ffb703;
+    font-size: 1.2rem;
+  }
+  .footerContainer .footerServicesContainer .footerServicesList {
+    color: #fff;
+    font-size: 1rem;
+  }
+  .footerContainer .footerContactDetailsWrapper {
+    padding: 0px 25px;
+  }
+  .footerContainer .footerContactDetailsWrapper .footerContactDetails {
+    color: #ffb703;
+    font-size: 1.2rem;
+  }
+  .footerContainer .footerContactDetailsWrapper .footerContactList {
+    color: #fff;
+    font-size: 1rem;
+  }
+  .footerCopyRightSection {
+    font-size: 0.8rem;
+    padding: 11px 25px 15px 25px;
+  }
+  .mobileMenuContainer {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: #12223b;
+    z-index: 10;
+
+    transition: all 1s ease-in-out;
+  }
+  .mobileMenuContainer.openMobileMenu {
+    /* left: 0; */
+    animation-name: openMobileMenuTransition;
+    animation-duration: 0.6s;
+    transition: all 0.6s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .mobileMenuContainer.closeMobileMenu {
+    /* left: 0; */
+    animation-name: closeMobileMenuTransition;
+    animation-duration: 1s;
+    transition: all 1s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .mobileMenuContainer .mobileMenuList {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* gap: 45px; */
+    color: #fff;
+  }
+  .mobileMenuContainer .mobileMenuList .mobileMenuOption {
+    padding: 25px;
+    height: 75px;
+    width: 100%;
+    font-size: 22px;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+  }
+  .mobileMenuContainer .mobileMenuList .mobileMenuHome {
+    border-top: 2px solid #fff;
+  }
+  .hideHomeContainerScroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .aboutUsContainer {
+    padding: 0;
+  }
+  .aboutUsContainer .aboutUsImgContainer {
+    margin-bottom: 20px;
+  }
+  .aboutUsContainer .aboutUsImgContainer .aboutUsImage,
+  .aboutUsContainer .aboutUsImgContainer .aboutUsImage:before {
+    border-radius: 0px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    /* color: #ffb703; */
+  }
+  .aboutUsInfo {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+  .aboutUsInfo .aboutUsMissionVisionImgContainer {
+    width: 90%;
+    height: 400px;
+  }
+  .aboutUsInfo .aboutUsMissionVision {
+    width: 90%;
+  }
+  .aboutUsInfo .aboutUsMissionVisionImgContainer .aboutUsMissionVisionUmg1,
+  .aboutUsInfo .aboutUsMissionVisionImgContainer .aboutUsMissionVisionUmg2 {
+    width: 70%;
+  }
+  .aboutUsInfo .aboutUsMissionVisionImgContainer .aboutUsMissionVisionUmg2 {
+    position: relative;
+    top: -22%;
+    left: 30%;
+  }
+  .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionHeading,
+  .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionHeading {
+    font-size: 1.6rem;
+  }
+  .aboutUsInfo .aboutUsMissionVision .aboutUsMainText {
+    font-size: 1.4rem;
+  }
+  .aboutUsInfo .aboutUsMissionVision .aboutUsMainText span {
+    font-size: 2rem;
+  }
+  .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionText,
+  .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionText {
+    font-size: 1.2rem;
+  }
+  @keyframes openMobileMenuTransition {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes closeMobileMenuTransition {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes burgerIconBarRotateFirstBar {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: 45deg;
+    }
+  }
+  @keyframes burgerIconBarRotateSecondBar {
+    from {
+      rotate: 0deg;
+    }
+    to {
+      rotate: -45deg;
+    }
+  }
+}

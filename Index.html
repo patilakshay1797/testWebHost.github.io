@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vastundya Designs</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./css/media.css" />
+    <script
+      src="https://kit.fontawesome.com/bf7a0fcdc4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "aQkNVPiG8T19LX-Nj",
+        });
+      })();
+    </script>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvkLNGc8uNE020gAMWgH8bMdZA5W-nEPo&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
+  </head>
+  <body>
+    <div class="appContainer">
+      <header></header>
+      <main></main>
+      <footer></footer>
+    </div>
+    <div class="burgerIconBtn">
+      <div class="burgerIconBar"></div>
+      <div class="burgerIconBar"></div>
+      <div class="burgerIconBar"></div>
+    </div>
+    <div class="mobileMenuContainer">
+      <div class="mobileMenuList">
+        <div class="mobileMenuHome mobileMenuOption">Home</div>
+        <div class="mobileMenuAboutUs mobileMenuOption">About Us</div>
+        <div class="mobileMenuProjects mobileMenuOption">Projects</div>
+        <div class="mobileMenuContactUs mobileMenuOption">Contact Us</div>
+      </div>
+    </div>
+    <div class="loader-wrapper">
+      <img
+        src="./assets/images/VastndyaDesignswebp3.webp"
+        width="110px"
+        height="65px"
+        loading="lazy"
+      />
+      <div class="loadingText">Loading...</div>
+    </div>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

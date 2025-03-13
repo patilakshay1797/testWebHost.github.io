@@ -1,0 +1,32 @@
+For Home page
+    1> finalize content 
+    2> figure out positions
+    3> finalize footer content
+    4> add photos from pdf
+    5> add animations
+
+For About us page
+    1> finalize content
+    2> figure out positions
+    3> add photos
+    4> add animations
+
+For Projects
+    1> finalize content
+    2> figure out content
+    3> add photos and wording for Projects
+    4> cool animations
+ 
+FOr Contact us
+    1> finalize content
+    2> figure out content
+    3> check how to use email.js or any other availble email system
+    4> integrate in with contact form
+    5> add location on map need to figure it out
+    6> add animations
+
+
+All the project shout have loading screen
+    1> figure out how to add loading 
+    2> fetch all the files when that section is opened (html and js)
+    3> add loading screen while loading another section
