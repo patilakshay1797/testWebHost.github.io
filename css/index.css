@@ -4,10 +4,75 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  align-items: center;
+  background: rgba(198, 188, 188, 0.95);
+}
+.loaderLogo {
+  margin: 20px;
+}
+.loader {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #0396e3;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  inset: 8px;
+  transform: rotate3d(90, 90, 0, 180deg);
+  border-color: #c85089;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  75%,
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
 }
 
 .loader-wrapper {
@@ -88,33 +153,44 @@ main {
   padding: 50px 0px 50px 0px;
 }
 .homeContainer {
-  width: calc(100% - 70px);
-  margin: 0px 35px 0px 35px;
+  /* width: calc(100% - 70px); */
+  width: calc(100%);
+  /* margin: 0px 35px 0px 35px; */
 }
 .homeContainer .homeCarousel {
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 50px);
   margin-bottom: 50px;
 }
 .homeContainer .homeCarousel .homeImgContainer {
   position: relative;
   height: 100%;
-  background-image: url("../assets/images/Home.webp");
+  /* background-image: url("../assets/images/compressedImages/Home.webp"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #3d3d3d;
-  border-radius: 50px;
+
+  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
+}
+.homeContainer .homeCarousel .homeImgContainer .homeCoverImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
 }
 .homeContainer .homeCarousel .homeImgContainer img {
   position: sticky;
   top: 115px;
   left: 65px;
-  height: 80px;
-  width: 160px;
+  height: 120px;
+  width: 240px;
   z-index: 1;
 }
 .burgerIconBtn {
@@ -130,7 +206,7 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .homeContainer .homeCarousel .homeWelcomeContainer {
   position: relative;
@@ -146,9 +222,8 @@ main {
 }
 .homeContainer .homeCarousel .homeWelcomeContainer .welcomeText {
   font-size: 1.9rem;
-  font-weight: 900;
-  text-shadow: 1px 0 #ffb703;
-  letter-spacing: 3px;
+  font-weight: 700;
+
   color: #ffb703;
   margin-bottom: 30px;
   text-align: center;
@@ -172,8 +247,9 @@ main {
 }
 .homeContainer .homeCarousel .homeWelcomeContainer .scrollDownOptionWrapper {
   position: absolute;
-  bottom: 10px;
+  bottom: 45px;
   text-align: center;
+  cursor: pointer;
 }
 .homeContainer
   .homeCarousel
@@ -189,6 +265,35 @@ main {
   color: #ffb703;
   font-size: 1.4rem;
   border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+.homeContainer
+  .homeCarousel
+  .homeWelcomeContainer
+  .scrollDownOptionWrapper
+  .scrollIcon:hover {
+  transform: scale(1.05);
+}
+.homeContainer
+  .homeCarousel
+  .homeWelcomeContainer
+  .scrollDownOptionWrapper
+  .scrollIcon
+  i {
+  animation: 1.2s ease infinite wheel-up-down;
+}
+
+@keyframes wheel-up-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
 }
 .homeContainer
   .homeCarousel
@@ -208,6 +313,10 @@ main {
   align-items: center;
   gap: 75px;
   margin-bottom: 50px;
+  /* background-image: url("../assets/images/wave.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
 }
 .homeContainer .homeSubInfoWrapper .subInfoImg {
   max-height: inherit;
@@ -230,7 +339,6 @@ main {
   font-size: 40px;
   font-weight: 700;
   color: #000;
-  text-shadow: 1px 0 #000;
   padding: 0px 80px 0px 0px;
   margin-bottom: 25px;
 }
@@ -241,28 +349,47 @@ main {
   margin-bottom: 25px;
 }
 .homeContainer .homeSubInfoWrapper .subInfo .featuresTextWrapper {
-  background-color: #e9f7fe;
+  background-color: #2a5eb8;
   padding: 25px;
   border-radius: 20px;
   margin-bottom: 25px;
 }
 .homeContainer .homeSubInfoWrapper .subInfo .featuresTextWrapper .featuresText {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   padding: 10px;
+  color: #fff;
+}
+.homeContainer
+  .homeSubInfoWrapper
+  .subInfo
+  .featuresTextWrapper
+  .featuresText
+  i {
+  font-size: 18px;
+  color: #ffb703;
+  border: 2px solid #ffb703;
+  border-radius: 50%;
+  padding: 3px;
+  margin-right: 7px;
 }
 .homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo {
   display: flex;
 }
 .homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo .phoneLogo {
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: center;
+  align-items: center;
   width: 70px;
   height: 70px;
-  margin: 0px 15px 0px 0px;
-  background-color: #667282;
   border-radius: 50%;
 }
+.homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo .phoneLogo i {
+  font-size: 2.4rem;
+}
 .homeContainer .homeSubInfoWrapper .subInfo .homeContactInfo .contactInfo {
-  padding: 7px 0px;
+  padding: 11px 0px;
   font-size: 18px;
 }
 .homeContainer
@@ -285,15 +412,12 @@ main {
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffb703;
-  text-shadow: 2px 0 #ffb703;
-  letter-spacing: 2px;
+  text-shadow: 1px 1px black;
   margin: 15px 0px;
 }
 .homeContainer .homeJobProjectsWrapper .homeDiverseProjects {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
-  text-shadow: 1px 0 #000;
-  letter-spacing: 1px;
   margin-bottom: 20px;
 }
 .homeContainer .homeJobProjectsWrapper .homeJobExperienceList {
@@ -437,9 +561,12 @@ main {
   font-size: 1.8rem;
   font-weight: 700;
   color: #ffb703;
-  text-shadow: 2px 0 #ffb703;
-  letter-spacing: 2px;
   margin-bottom: 10px;
+}
+.headImgText {
+  z-index: 1;
+  color: #fff;
+  font-size: 2.6rem;
 }
 .homeViewAllProjectsBtnWrapper {
   display: flex;
@@ -450,21 +577,39 @@ main {
   width: max-content;
   padding: 10px;
   /* background-color: #ffb703; */
-  background: linear-gradient(to left, #ffb703 50%, #12223b 50%) right;
+  background: linear-gradient(to left, #2a5eb8 50%, #ffb703 50%) right;
   background-size: 200% 100%;
   color: #fff;
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: 700;
   transition: background 0.3s linear;
+  /* animation: buttonAnimation 4s ease-in-out infinite; */
 }
 .homeViewAllProjectsBtnWrapper .homeViewAllProjectsBtn:hover {
   cursor: pointer;
   background-color: #12223b;
   background-position: left;
 }
+
+@keyframes buttonAnimation {
+  0% {
+    background-position: right;
+  }
+  50% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
 .footerContainer {
-  background-color: #12223b;
+  /* background-color: #12223b; */
+  background-color: #2a384f;
+  background-image: url("../assets/images/wave3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
@@ -547,7 +692,7 @@ main {
 }
 .aboutUsContainer {
   width: 100%;
-  padding: 0 35px 0 35px;
+  /* padding: 0 35px 0 35px; */
 }
 .aboutUsContainer .aboutUsImgContainer {
   height: calc(100vh - 50vh);
@@ -556,12 +701,12 @@ main {
 .aboutUsContainer .aboutUsImgContainer .aboutUsImage {
   position: relative;
   height: 100%;
-  background-image: url("../assets/images/abuoutUsPage1.jpg");
+  /* background-image: url("../assets/images/abuoutUsPage1.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #3d3d3d;
-  border-radius: 50px;
+  /* background-color: #3d3d3d; */
+  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -572,9 +717,7 @@ main {
   font-size: 36px;
   font-weight: 700;
 }
-.aboutUsContainer .aboutUsImgContainer .aboutUsImage .aboutUsText {
-  z-index: 1;
-}
+
 .aboutUsContainer .aboutUsImgContainer .aboutUsImage:before {
   content: "";
   position: absolute;
@@ -585,7 +728,7 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .aboutUsInfo {
   display: flex;
@@ -669,7 +812,7 @@ main {
   font-size: 2rem;
   font-weight: 700;
   /* text-align: center; */
-  color: #12223b;
+  color: #2a5eb8;
   margin-bottom: 15px;
   position: relative;
 }
@@ -721,7 +864,7 @@ main {
 .missionHeading:after,
 .visionHeading:after {
   content: "";
-  background: #ffb703;
+  background: #c12a7e;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -775,7 +918,7 @@ main {
 /* projects css start */
 .projectsContainer {
   width: 100%;
-  padding: 0 35px 0 35px;
+  /* padding: 0 35px 0 35px; */
 }
 .projectsContainer .projectsImgContainer {
   height: calc(100vh - 50vh);
@@ -784,12 +927,12 @@ main {
 .projectsContainer .projectsImgContainer .projectsImage {
   position: relative;
   height: 100%;
-  background-image: url("../assets/images/projectsWrapper.jpg");
+  /* background-image: url("../assets/images/projectsWrapper.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #3d3d3d;
-  border-radius: 50px;
+  /* background-color: #3d3d3d; */
+  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -810,10 +953,12 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
-.projectsContainer .projectsImgContainer .projectsImage .projectsText {
-  z-index: 1;
+.homeLink {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  font-weight: 400;
 }
 .projectsContainer .allProjectsContainer .allProjects {
   display: flex;
@@ -929,7 +1074,20 @@ main {
 /* projects css start */
 .contactUsContainer {
   width: 100%;
-  padding: 0 35px 0 35px;
+  /* padding: 0 35px 0 35px; */
+}
+.headBackImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.headImgTextWrapper {
+  position: relative;
+  text-align: center;
 }
 .contactUsContainer .contactUsImgContainer {
   height: calc(100vh - 50vh);
@@ -938,12 +1096,12 @@ main {
 .contactUsContainer .contactUsImgContainer .contactUsImage {
   position: relative;
   height: 100%;
-  background-image: url("../assets/images/contactUs1.jpg");
+  /* background-image: url("../assets/images/contactUs1.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: #3d3d3d;
-  border-radius: 50px;
+  /* background-color: #3d3d3d; */
+  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -953,6 +1111,13 @@ main {
   color: #fff;
   font-size: 36px;
   font-weight: 700;
+}
+.headLogoImage {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  width: 240px;
+  height: 120px;
 }
 .contactUsContainer .contactUsImgContainer .contactUsImage:before {
   content: "";
@@ -964,7 +1129,7 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .contactUsContainer .contactUsImgContainer .contactUsImage .contactUsText {
   z-index: 1;
@@ -1013,7 +1178,7 @@ main {
   left: -35px;
   width: calc(100% + 70px);
   height: 800px;
-  background-color: #e9f7fe;
+  background-color: #2a5eb8;
   padding: 80px 35px;
   margin-bottom: 25px;
 }
@@ -1165,12 +1330,16 @@ main {
 .contactUsFormSubmitButton {
   margin: 30px 0px;
   padding: 15px;
-  background-color: #12223b;
+  background: linear-gradient(to left, #2a5eb8 50%, #12223b 50%) right;
+  background-size: 200% 100%;
   color: #fff;
   font-size: 1.2rem;
   border-radius: 10px;
   border: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.contactUsFormSubmitButton:hover {
+  background-position: left;
 }
 .contactUsFormSubmitButton:hover {
   cursor: pointer;

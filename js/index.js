@@ -1,19 +1,28 @@
 let activeNavOption = "Home.html";
+
 async function onLaunch() {
+  const mainContainer = document.querySelector("main");
+  mainContainer.style.display = "none";
+
+  const homeResponse = await fetch(`./html/${activeNavOption}`);
+  const homeHtml = await homeResponse.text();
+
+  document.querySelector("main").innerHTML = homeHtml;
+
+  const headerResponse = await fetch("./html/HeaderDesktop.html");
+  const headerHtml = await headerResponse.text();
+  document.querySelector("header").innerHTML = headerHtml;
+
   const footerResponse = await fetch("./html/FooterDesktop.html");
   const footerHtml = await footerResponse.text();
   document.querySelector("footer").innerHTML = footerHtml;
 
-  const homeResponse = await fetch(`./html/${activeNavOption}`);
-  const homeHtml = await homeResponse.text();
-  document.querySelector("main").innerHTML = homeHtml;
   // var script = document.createElement("script"); // create a script DOM node
   // script.src = "../js/home.js";
   // document.head.appendChild(script);
   ObserverFunc();
-  const headerResponse = await fetch("./html/HeaderDesktop.html");
-  const headerHtml = await headerResponse.text();
-  document.querySelector("header").innerHTML = headerHtml;
+
+  hideLoadingScreen();
 }
 
 // import { homeObserverFunc } from "./home.js";
@@ -34,7 +43,7 @@ function removeOpenMobileMenuClass() {
 
 async function handleNavBarOptionClick(e) {
   console.log("Nav Bar Click ===> ", e);
-
+  showLoadingScreen();
   if (
     e.target.classList.contains("aboutUsNavButton") ||
     e.target.classList.contains("mobileMenuAboutUs")
@@ -81,6 +90,8 @@ async function handleNavBarOptionClick(e) {
   }
   scrollToTop();
   ObserverFunc();
+
+  hideLoadingScreen();
 }
 
 function handleBurgerIconClick() {
@@ -485,3 +496,24 @@ function addEventListnerOnViewAllProjectsButton() {
 }
 
 window.addEventListener("scroll", (e) => console.log(e), { passive: true });
+
+function hideLoadingScreen() {
+  setTimeout(() => {
+    const loadingContainer = document.querySelector(".loaderContainer");
+    loadingContainer.style.display = "none";
+    const mainContainer = document.querySelector("main");
+    mainContainer.style.display = "block";
+  }, 1000);
+}
+
+function showLoadingScreen() {
+  const loadingContainer = document.querySelector(".loaderContainer");
+  loadingContainer.style.display = "flex";
+  const mainContainer = document.querySelector("main");
+  mainContainer.style.display = "none";
+}
+
+function scrolldiv() {
+  var element = document.querySelector(".homeSubInfoWrapper");
+  element.scrollIntoView();
+}
