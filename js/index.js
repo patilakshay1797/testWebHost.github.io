@@ -8,7 +8,7 @@ async function onLaunch() {
   const homeHtml = await homeResponse.text();
 
   document.querySelector("main").innerHTML = homeHtml;
-
+  addEventListenerOnHomeCarasoualButtons();
   const headerResponse = await fetch("./html/HeaderDesktop.html");
   const headerHtml = await headerResponse.text();
   document.querySelector("header").innerHTML = headerHtml;
@@ -39,6 +39,7 @@ function removeOpenMobileMenuClass() {
   document
     .querySelector(".appContainer")
     .classList.remove("hideHomeContainerScroll");
+  document.querySelector(".burgerIconBtn").classList.remove("crossBurgerBar");
 }
 
 async function handleNavBarOptionClick(e) {
@@ -64,6 +65,7 @@ async function handleNavBarOptionClick(e) {
     const homeHtml = await homeResponse.text();
     document.querySelector("main").innerHTML = homeHtml;
     addEventListnerOnViewAllProjectsButton();
+    addEventListenerOnHomeCarasoualButtons();
     activeNavOption = "Home.html";
     // loadPageIfNotLoaded("home");
   } else if (
@@ -89,6 +91,7 @@ async function handleNavBarOptionClick(e) {
     removeOpenMobileMenuClass();
   }
   scrollToTop();
+
   ObserverFunc();
 
   hideLoadingScreen();
@@ -140,6 +143,9 @@ function sendEmail(e) {
   const phoneNumber = document.querySelector("#contactUsFormNumber");
   const subject = document.querySelector("#contactUsFormSubject");
   const message = document.querySelector("#contactUsFormMessage");
+  document.querySelector(".contactUsEmailSendSuccessMsg").style.display =
+    "none";
+  document.querySelector(".contactUsEmailSendErrMsg").style.display = "none";
 
   let isFormValid = true;
   if (!name.value) {
@@ -516,4 +522,99 @@ function showLoadingScreen() {
 function scrolldiv() {
   var element = document.querySelector(".homeSubInfoWrapper");
   element.scrollIntoView();
+}
+
+function addEventListenerOnHomeCarasoualButtons() {
+  // let carousalButtons = document.querySelectorAll(".fa-solid");
+  // const allImagesCount = document.querySelectorAll(
+  //   ".slideShow .allProjectsImages .homeProjectsCardWrapper"
+  // );
+
+  // const imagesCount = allImagesCount.length;
+  // let sliderCount = 1;
+  // let slider = document.querySelector(".slideShow .allProjectsImages");
+  // carousalButtons.forEach((ele) => {
+  //   ele.addEventListener("click", (e) => {
+  //     const oneContainerImgWidth = document.querySelector(
+  //       ".slideShow .allProjectsImages .threeSlideImgWrapper .homeProjectsCardWrapper"
+  //     ).offsetWidth;
+  //     if (e.target.classList.contains("fa-arrow-right")) {
+  //       if (sliderCount < Math.ceil((imagesCount - 3) / 3)) {
+  //         slider.style.transform = `translateX(-${
+  //           oneContainerImgWidth * 3 * sliderCount +
+  //           (sliderCount === 2 ? 480 : 240)
+  //         }px)`;
+  //         sliderCount++;
+  //       } else {
+  //         slider.style.transform = "translateX(0)";
+  //         sliderCount = 1;
+  //       }
+  //       // sliderCount++;
+  //       // sliderCount++;
+  //     }
+  //     if (e.target.classList.contains("fa-arrow-left") && sliderCount > 1) {
+  //       const oneContainerImgWidth = document.querySelector(
+  //         ".slideShow .allProjectsImages .threeSlideImgWrapper .homeProjectsCardWrapper"
+  //       ).offsetWidth;
+  //       slider.style.transform = `translateX(-${
+  //         (sliderCount - 2) * (oneContainerImgWidth * 3) +
+  //         (sliderCount === 3 ? 240 : 0)
+  //       }px)`;
+  //       sliderCount--;
+  //       // sliderCount--;
+  //       // sliderCount--;
+  //     }
+  //   });
+  // });
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+
+    autoplay: {
+      delay: 30000000,
+    },
+
+    breakpoints: {
+      // when window width is >= 320px
+      480: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      // when window width is >= 480px
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 30,
+      },
+      // when window width is >= 640px
+      1200: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      1440: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+    },
+  });
 }

@@ -153,9 +153,7 @@ main {
   padding: 50px 0px 50px 0px;
 }
 .homeContainer {
-  /* width: calc(100% - 70px); */
   width: calc(100%);
-  /* margin: 0px 35px 0px 35px; */
 }
 .homeContainer .homeCarousel {
   width: 100%;
@@ -165,12 +163,9 @@ main {
 .homeContainer .homeCarousel .homeImgContainer {
   position: relative;
   height: 100%;
-  /* background-image: url("../assets/images/compressedImages/Home.webp"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
-  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -206,6 +201,12 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
   /* border-radius: 50px; */
 }
 .homeContainer .homeCarousel .homeWelcomeContainer {
@@ -243,7 +244,7 @@ main {
   font-weight: 600;
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .homeContainer .homeCarousel .homeWelcomeContainer .scrollDownOptionWrapper {
   position: absolute;
@@ -349,7 +350,7 @@ main {
   margin-bottom: 25px;
 }
 .homeContainer .homeSubInfoWrapper .subInfo .featuresTextWrapper {
-  background-color: #2a5eb8;
+  background-color: #154d8a;
   padding: 25px;
   border-radius: 20px;
   margin-bottom: 25px;
@@ -401,173 +402,6 @@ main {
   font-size: 20px;
   font-weight: 700;
 }
-.homeContainer .homeJobProjectsWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-.homeContainer .homeJobProjectsWrapper .homeJobProjectsText {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffb703;
-  text-shadow: 1px 1px black;
-  margin: 15px 0px;
-}
-.homeContainer .homeJobProjectsWrapper .homeDiverseProjects {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.homeContainer .homeJobProjectsWrapper .homeJobExperienceList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 25px;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList {
-  /* width: 25%; */
-
-  height: 325px;
-  /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
-  position: relative;
-  border-radius: 50px;
-  opacity: 0;
-  transition: all 0.5s ease-in-out !important;
-  background-color: #12223b30;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:hover {
-  /* transform: scale(1.3) !important;
-  grid-column-start: 1;
-  grid-column-end: 3; */
-  /* width: 140%;
-  height: 140%; */
-  /* transform: scale(1.4); */
-  z-index: 100;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:nth-child(2):hover {
-  /* left: -20%; */
-  /* transform: scale(1.4); */
-  /* width: 140%;
-  height: 140%; */
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:nth-child(3):hover {
-  /* left: -20%; */
-  /* transform: scale(1.4); */
-  /* width: 140%;
-  height: 140%; */
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:nth-child(4):hover {
-  /* left: -40%; */
-  /* transform: scale(1.4); */
-  /* width: 140%;
-  height: 140%; */
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList
-  .projectImg
-  img {
-  position: relative;
-  object-fit: cover;
-  border-radius: 50px;
-  width: 100%;
-  height: 100%;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList
-  .overlayJob {
-  position: absolute;
-  bottom: -10%;
-  margin-bottom: 15px;
-  color: #fff;
-  display: none;
-  transition: display 1s linear, transform 1s ease-in-out;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList
-  .overlayJob
-  .projectInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: left;
-  font-size: 1.3rem;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList
-  .overlayJob
-  .projectInfo
-  div
-  i {
-  width: 41px;
-  padding: 10px;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  background: #000;
-  border-radius: 50px;
-  z-index: 10;
-}
-.homeContainer
-  .homeJobProjectsWrapper
-  .homeJobExperienceList
-  .eachJobProjectInList:hover
-  .overlayJob {
-  display: block;
-  transform: translateY(-100px);
-  z-index: 11;
-}
-.homeJobProjectsText {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffb703;
-  margin-bottom: 10px;
-}
-.headImgText {
-  z-index: 1;
-  color: #fff;
-  font-size: 2.6rem;
-}
 .homeViewAllProjectsBtnWrapper {
   display: flex;
   justify-content: center;
@@ -576,22 +410,104 @@ main {
 .homeViewAllProjectsBtnWrapper .homeViewAllProjectsBtn {
   width: max-content;
   padding: 10px;
-  /* background-color: #ffb703; */
-  background: linear-gradient(to left, #2a5eb8 50%, #ffb703 50%) right;
+  background: linear-gradient(to left, #154d8a 50%, #ffb703 50%) right;
   background-size: 200% 100%;
   color: #fff;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   transition: background 0.3s linear;
-  /* animation: buttonAnimation 4s ease-in-out infinite; */
 }
 .homeViewAllProjectsBtnWrapper .homeViewAllProjectsBtn:hover {
   cursor: pointer;
   background-color: #12223b;
   background-position: left;
 }
-
+.homeViewAllProjectsBtnWrapper.projectsSliderSection {
+  padding-bottom: 20px;
+}
+.homeViewAllProjectsBtnWrapper.projectsSliderSection .homeViewAllProjectsBtn {
+  background: linear-gradient(to left, #ffb703 50%, #002f5d 50%) right;
+  background-size: 200% 100%;
+  transition: background 0.3s linear;
+}
+.homeViewAllProjectsBtnWrapper.projectsSliderSection
+  .homeViewAllProjectsBtn:hover {
+  background-color: #002f5d;
+  background-position: left;
+}
+.projectsHomeContainer {
+  background-color: #154d8a;
+}
+.projectsHomeContainer .projectsHomeHeadingText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  padding: 20px 0px 0px 0px;
+}
+.projectsHomeContainer .projectsHomeHeadingText .ourProjects {
+  font-size: 2.5rem;
+  color: #ffb703;
+}
+.projectsHomeContainer
+  .swiperContainer
+  .swiper-wrapper
+  .swiper-slide
+  .slideHeading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  padding-bottom: 25px;
+}
+.swiper-slide {
+  padding: 30px 50px;
+}
+.swiper-slide .projectsTypeWise {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: calc(40vh + 15vw);
+}
+.swiper-slide .projectsTypeWise .projectInfoWrapper {
+  width: 30%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.swiper-slide .projectsTypeWise .projectInfoWrapper .projectHomeImgContainer {
+  width: 100%;
+  height: 80%;
+}
+.swiper-slide
+  .projectsTypeWise
+  .projectInfoWrapper
+  .projectHomeImgContainer
+  img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.projectHomeImgInfo {
+  height: 20%;
+  background-color: #002f5d;
+  border-radius: 0 0 20px 20px;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+.projectHomeImgInfo i {
+  font-size: 1rem;
+  color: #ffb703;
+}
+.projectHomeImgInfo .projectLocation {
+  font-size: 1.4rem;
+}
+.projectHomeImgInfo .projectSubInfo {
+  font-size: 1.2rem;
+}
 @keyframes buttonAnimation {
   0% {
     background-position: right;
@@ -603,20 +519,25 @@ main {
     background-position: right;
   }
 }
-.footerContainer {
-  /* background-color: #12223b; */
+
+/* footer css start */
+footer {
   background-color: #2a384f;
   background-image: url("../assets/images/wave3.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+.footerContainer {
   display: flex;
   justify-content: center;
+  gap: 100px;
+  padding: 0px 30px;
 }
 .footerContainer .footerLogoName {
   display: flex;
   flex-direction: column;
-  padding: 70px 50px;
+  padding: 70px 0px;
 }
 .footerContainer .footerLogoName .footerCompanyName {
   color: #ffb703;
@@ -630,7 +551,11 @@ main {
   height: 130px;
 }
 .footerContainer .footerServicesContainer {
-  padding: 70px 50px;
+  padding: 70px 0px;
+}
+.footerContainer .footerServicesContainer.footerCompanyNav {
+  display: flex;
+  gap: 100px;
 }
 .footerContainer .footerServicesContainer .footerServices {
   color: #ffb703;
@@ -644,13 +569,11 @@ main {
   padding: 10px 0px;
   margin-top: 10px;
   transition: color 0.3s ease-in-out;
+  width: fit-content;
 }
 .footerContainer .footerServicesContainer .footerServicesList:hover {
   cursor: pointer;
   color: #ffb703;
-}
-.footerContainer .footerContactDetailsWrapper {
-  padding: 70px 50px;
 }
 .footerContainer .footerContactDetailsWrapper .footerContactDetails {
   color: #ffb703;
@@ -672,6 +595,7 @@ main {
   color: #fff;
   transition: color 0.2s ease-in-out;
   text-decoration: none;
+  word-break: break-all;
 }
 .footerContainer .footerContactDetailsWrapper .footerContactList a:hover {
   color: #ffb703;
@@ -692,7 +616,6 @@ main {
 }
 .aboutUsContainer {
   width: 100%;
-  /* padding: 0 35px 0 35px; */
 }
 .aboutUsContainer .aboutUsImgContainer {
   height: calc(100vh - 50vh);
@@ -701,12 +624,9 @@ main {
 .aboutUsContainer .aboutUsImgContainer .aboutUsImage {
   position: relative;
   height: 100%;
-  /* background-image: url("../assets/images/abuoutUsPage1.jpg"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /* background-color: #3d3d3d; */
-  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -728,6 +648,12 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
   /* border-radius: 50px; */
 }
 .aboutUsInfo {
@@ -747,17 +673,7 @@ main {
 .aboutUsInfo .aboutUsMissionVisionImgContainer {
   width: 40%;
   height: 500px;
-  /* position: absolute;
-  left: 0; */
   opacity: 0;
-}
-.intersectionAnimationLeftRight {
-  /* transform: translateX(-1000px); */
-  /* opacity: 0; */
-}
-.intersectionAnimationRightLeft {
-  /* transform: translateX(1000px); */
-  /* opacity: 0; */
 }
 .translateLeftRightAnim {
   position: static !important;
@@ -771,13 +687,11 @@ main {
 .aboutUsInfo .aboutUsMissionVision {
   width: 40%;
   height: auto;
-  /* animation: aboutUsAniRightToLeft 1s ease-in-out forwards; */
   transition: all ease-in-out 1s;
   margin-bottom: 15px;
 }
 .aboutUsInfo .aboutUsMissionVisionImgContainer .aboutUsMissionVisionUmg1,
 .aboutUsInfo .aboutUsMissionVisionImgContainer .aboutUsMissionVisionUmg2 {
-  /* border: 1px solid red; */
   height: 60%;
   width: 55%;
   border-radius: 20px;
@@ -809,10 +723,9 @@ main {
 
 .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionHeading,
 .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionHeading {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  /* text-align: center; */
-  color: #2a5eb8;
+  color: #154d8a;
   margin-bottom: 15px;
   position: relative;
 }
@@ -871,18 +784,11 @@ main {
   width: 20%;
   height: 2px;
 }
-
-/* .borderBottom {
-  border-bottom: 2px solid #ffb703;
-  position: absolute;
-  right: 50%;
-} */
 .aboutUsInfo .aboutUsMissionVision .aboutUsMainText,
 .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionText,
 .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionText {
   font-size: 1.6rem;
   font-weight: 500;
-  /* text-align: center; */
   color: #667282;
 }
 .aboutUsInfo .aboutUsMissionVision .aboutUsMainText span {
@@ -904,7 +810,6 @@ main {
 .aboutUsInfo .aboutUsExperienceImgContainer .infoText {
   font-size: 1.6rem;
   font-weight: 500;
-  /* text-align: center; */
   color: #667282;
 }
 .aboutUsInfo .aboutUsExperienceImgContainer .founderText {
@@ -918,7 +823,6 @@ main {
 /* projects css start */
 .projectsContainer {
   width: 100%;
-  /* padding: 0 35px 0 35px; */
 }
 .projectsContainer .projectsImgContainer {
   height: calc(100vh - 50vh);
@@ -927,12 +831,9 @@ main {
 .projectsContainer .projectsImgContainer .projectsImage {
   position: relative;
   height: 100%;
-  /* background-image: url("../assets/images/projectsWrapper.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-color: #3d3d3d; */
-  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -953,7 +854,12 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  /* border-radius: 50px; */
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 .homeLink {
   font-size: 1.2rem;
@@ -964,11 +870,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.projectsContainer .allProjectsContainer .allProjects div {
-  /* display: grid;
-  grid-template-columns: repeat(4, 400px);
-  gap: 20px; */
 }
 .projectsContainer .allProjectsContainer .allProjects div .pro {
   display: flex;
@@ -989,15 +890,6 @@ main {
   border-radius: 30px;
   box-shadow: 64px 64px 160px -40px rgba(0, 0, 0, 0.24);
   transition: transform 0.3s ease-in-out;
-}
-.projectsContainer
-  .allProjectsContainer
-  .allProjects
-  div
-  .pro
-  .proImg
-  img:hover {
-  /* transform: scale(0.9); */
 }
 .projectsContainer .allProjectsContainer .allProjects div .pro .proInfo {
   border: 1px solid #12223b30;
@@ -1074,7 +966,6 @@ main {
 /* projects css start */
 .contactUsContainer {
   width: 100%;
-  /* padding: 0 35px 0 35px; */
 }
 .headBackImg {
   position: absolute;
@@ -1096,12 +987,9 @@ main {
 .contactUsContainer .contactUsImgContainer .contactUsImage {
   position: relative;
   height: 100%;
-  /* background-image: url("../assets/images/contactUs1.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background-color: #3d3d3d; */
-  /* border-radius: 50px; */
   animation-name: loadingImgAnimation;
   animation-duration: 1s;
   transition: all ease-in-out 1s;
@@ -1129,7 +1017,12 @@ main {
   height: 100%;
   opacity: 0.5;
   background: #000;
-  /* border-radius: 50px; */
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 1) 7%,
+    rgba(0, 0, 0, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 .contactUsContainer .contactUsImgContainer .contactUsImage .contactUsText {
   z-index: 1;
@@ -1170,21 +1063,19 @@ main {
   padding: 10px;
 }
 .contactUsEmailContainer {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
   left: -35px;
-  width: calc(100% + 70px);
   height: 800px;
-  background-color: #2a5eb8;
+  background-color: #154d8a;
   padding: 80px 35px;
   margin-bottom: 25px;
 }
 .contactUsEmailWrapper {
   width: 50%;
-  height: 100%;
+  height: fit-content;
   background-color: #fff;
   border-radius: 30px;
   padding: 20px 30px;
@@ -1219,23 +1110,6 @@ main {
 }
 .contactUsEmailContainer .contactUsEmailWrapper .fillFormMsg {
   color: #3d3d3d;
-}
-.contactUsEmailContainer .contactUsEmailWrapper .fillFormMsg:after {
-  content: "";
-  background: #ffb703;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30%;
-  height: 2px;
-}
-.contactUsContainer
-  .contactUsEmailContainer
-  .contactUsEmailWrapper
-  .emailJsContainer
-  .emailJsWrapper
-  .contactUsForm {
-  margin: 30px 0px;
 }
 .contactUsContainer
   .contactUsEmailContainer
@@ -1298,6 +1172,7 @@ main {
   display: none;
   padding-left: 10px;
   color: red;
+  width: 100%;
 }
 .contactUsContainer
   .contactUsEmailContainer
@@ -1330,7 +1205,7 @@ main {
 .contactUsFormSubmitButton {
   margin: 30px 0px;
   padding: 15px;
-  background: linear-gradient(to left, #2a5eb8 50%, #12223b 50%) right;
+  background: linear-gradient(to left, #154d8a 50%, #12223b 50%) right;
   background-size: 200% 100%;
   color: #fff;
   font-size: 1.2rem;
@@ -1375,9 +1250,15 @@ main {
   display: none;
 }
 .contactUsEmailSendSuccessMsg {
+  color: #79b22c;
+  font-size: 1.2rem;
+  font-weight: 500;
   display: none;
 }
 .contactUsEmailSendErrMsg {
+  color: red;
+  font-size: 1.2rem;
+  font-weight: 500;
   display: none;
 }
 .contactUsMapContainer {
@@ -1400,7 +1281,6 @@ gmp-map {
 .headingText {
   font-size: 2rem;
   font-weight: 700;
-  /* text-align: center; */
   color: #ffb703;
   margin-bottom: 15px;
 }
@@ -1436,6 +1316,28 @@ gmp-map {
 }
 .faintBlackColor {
   color: #3d3d3d !important;
+}
+.mindTextWork {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffb703;
+  margin-bottom: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.mindTextWork div {
+  position: relative;
+  margin: 0 40px;
+}
+.mindTextWork div:after {
+  content: "";
+  background: #c12a7e;
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  width: 40%;
+  height: 2px;
 }
 
 @keyframes homeWelcomeContainerOut {

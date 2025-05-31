@@ -1,3 +1,13 @@
+@media screen and (max-width: 1400px) {
+}
+@media screen and (max-width: 1110px) {
+  .footerContainer {
+    gap: 70px;
+  }
+  .footerContainer .footerServicesContainer.footerCompanyNav {
+    gap: 70px;
+  }
+}
 @media screen and (max-width: 992px) {
   body {
     /* overflow-x: unset; */
@@ -60,8 +70,12 @@
     position: relative;
     top: 15px;
     left: 15px;
-    height: 40px;
-    width: 80px;
+    height: 65px;
+    width: 130px;
+  }
+  .headLogoImage {
+    height: 65px;
+    width: 130px;
   }
   .homeContainer .homeCarousel .homeImgContainer .welcomeText {
     font-size: 1.2rem;
@@ -131,11 +145,14 @@
     font-size: 1.2rem;
     font-weight: 700;
   }
-  .homeContainer .homeJobProjectsWrapper .homeDiverseProjects {
+  .homeContainer .homeJobProjectsText {
+    margin: 0;
+  }
+  .homeContainer .homeDiverseProjects {
     font-size: 1.3rem;
     text-align: center;
   }
-  .homeContainer .homeJobProjectsWrapper .homeJobExperienceList {
+  .homeContainer .homeJobExperienceList {
     display: flex;
     flex-direction: column;
   }
@@ -146,8 +163,76 @@
     width: 85%;
     height: 350px;
   }
+  .projectHomeImgInfo {
+    padding: 14px;
+  }
+  .projectHomeImgInfo .projectLocation {
+    font-size: 1.2rem;
+  }
+  .projectHomeImgInfo .projectSubInfo {
+    font-size: 1rem;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro .proInfo {
+    width: 40%;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro .proImg {
+    width: 40%;
+  }
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro
+    .proInfo
+    .proSpace {
+    padding: 7px;
+  }
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro
+    .proInfo
+    .proSpace
+    div
+    i {
+    width: 25px;
+    padding: 0px 12px;
+    font-size: 1.2rem;
+    margin-right: 26px;
+  }
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro
+    .proInfo
+    .proSpace
+    .proInfoTitle {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro
+    .proInfo
+    .proSpace
+    .proInfoValue {
+    font-size: 1rem;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 100%; */
+    align-items: center;
+    /* background-color: #12223b; */
+  }
   .footerContainer {
-    background-color: #12223b;
+    /* background-color: #12223b; */
     flex-direction: column;
     gap: 20px;
     padding-bottom: 25px;
@@ -155,8 +240,9 @@
   .footerContainer .footerLogoName {
     padding: 25px 25px 0px 25px;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    gap: 40px;
   }
   .footerContainer .footerLogoName .footerCompanyName {
     color: #ffb703;
@@ -192,6 +278,15 @@
   .footerCopyRightSection {
     font-size: 0.8rem;
     padding: 11px 25px 15px 25px;
+  }
+  .footerContainer .footerServicesContainer.footerCompanyNav {
+    gap: 52px;
+  }
+  .footerCopyRightSection {
+    width: 100%;
+  }
+  .footerContainer .footerServicesContainer.footerCompanyNav {
+    padding: 0px 0px 0px 25px;
   }
   .mobileMenuContainer {
     display: block;
@@ -290,6 +385,86 @@
   .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionText {
     font-size: 1.2rem;
   }
+  .aboutUsInfo .aboutUsExperienceImgContainer {
+    width: 100%;
+  }
+  .aboutUsInfo .aboutUsExperienceImgContainer .aboutUsExperienceImg {
+    margin: 40px;
+    height: 400px;
+  }
+  .mindTextWork {
+    margin: 50px auto;
+    margin-bottom: 0;
+    justify-content: left;
+  }
+  .contactUsWays {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contactUsWays .contactUsPhoneNumber {
+    width: 300px;
+    height: 180px;
+  }
+  .contactUsWays .contactUsPhoneNumber .phoneIcon,
+  .contactUsWays .contactUsPhoneNumber .callUsText,
+  .contactUsWays .contactUsPhoneNumber .contactUsPhoneNumbers {
+    padding: 5px;
+  }
+  .contactUsEmailContainer {
+    flex-direction: column;
+    height: 830px;
+  }
+  .contactUsEmailContainer .contactUsEmailWrapper .contactUsEmailHeadingText {
+    font-size: 1.8rem;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    .formInputFlexFields
+    div
+    input {
+    padding: 20px 10px 10px 10px;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    div
+    #contactUsFormMessage {
+    min-height: 70px;
+    max-height: 70px;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm {
+    margin: 20px 0px 0px 0px;
+  }
+  .contactUsFormSubmitButton {
+    margin: 20px 0;
+  }
+  .contactUsEmailWrapper {
+    height: fit-content;
+    width: 100%;
+  }
+  .contactUsPhoneNumber .callUsText {
+    font-size: 1.2rem !important;
+  }
+  .contactUsWays .contactUsPhoneNumber .contactUsPhoneNumbers {
+    font-size: 1.2rem !important;
+  }
+  .socialMediaLinksContainer {
+    width: 30%;
+    height: 247px;
+    padding: 20px;
+  }
   @keyframes openMobileMenuTransition {
     from {
       transform: translateX(-100%);
@@ -321,5 +496,187 @@
     to {
       rotate: -45deg;
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .socialMediaLinksContainer {
+    width: 60%;
+    height: 247px;
+    padding: 20px;
+  }
+  .projectHomeImgInfo i {
+    font-size: 0.8rem;
+  }
+  .projectHomeImgInfo {
+    padding: 12px;
+  }
+  .projectHomeImgInfo .projectLocation {
+    font-size: 1rem;
+  }
+  .projectHomeImgInfo .projectSubInfo {
+    font-size: 0.8rem;
+  }
+  .projectsHomeContainer .projectsHomeHeadingText {
+    font-size: 1.2rem !important;
+  }
+  .projectsHomeContainer .projectsHomeHeadingText .ourProjects {
+    font-size: 2rem !important;
+  }
+  .projectsHomeContainer
+    .swiperContainer
+    .swiper-wrapper
+    .swiper-slide
+    .slideHeading {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .footerContainer {
+    padding: 0 0 25px 0;
+  }
+  .projectsHomeContainer .swiperContainer .swiper-slide {
+    padding: 10px;
+  }
+  .projectsHomeContainer .swiperContainer .swiper-slide .projectsTypeWise {
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+  }
+  .projectsHomeContainer
+    .swiperContainer
+    .swiper-slide
+    .projectsTypeWise
+    .projectInfoWrapper:nth-child(1) {
+    width: 100%;
+  }
+  .projectsHomeContainer
+    .swiperContainer
+    .swiper-slide
+    .projectsTypeWise
+    .projectInfoWrapper:nth-child(2),
+  .projectsHomeContainer
+    .swiperContainer
+    .swiper-slide
+    .projectsTypeWise
+    .projectInfoWrapper:nth-child(3) {
+    width: calc(50% - 5px);
+  }
+  .projectHomeImgInfo {
+    padding: 12px;
+  }
+  .projectHomeImgInfo .projectLocation {
+    font-size: 1.2rem;
+  }
+  .projectHomeImgInfo .projectSubInfo {
+    font-size: 1rem;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 32px !important;
+    position: absolute;
+  }
+  .swiper-button-next:after {
+    right: -5px !important;
+  }
+  .swiper-button-prev:after {
+    left: -5px !important;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro,
+  .projectsContainer .allProjectsContainer .allProjects div .pro.reverseFlex {
+    flex-direction: column;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro .proImg,
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro.reverseFlex
+    .proImg {
+    width: 80%;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro .proInfo,
+  .projectsContainer
+    .allProjectsContainer
+    .allProjects
+    div
+    .pro.reverseFlex
+    .proImg {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 407px) {
+  .homeContainer .homeCarousel .homeWelcomeContainer {
+    justify-content: end;
+  }
+  .footerSocialMediaContainer .socialMediaLinks .socialMediaIconWrapper {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+  .footerSocialMediaContainer .socialMediaLinks .socialMediaIconWrapper i {
+    font-size: 1.2rem;
+  }
+  .footerContainer .footerServicesContainer.footerCompanyNav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footerContainer .footerContactDetailsWrapper {
+    padding: 0;
+  }
+  .socialMediaLinksContainer {
+    width: 80%;
+  }
+  .contactUsEmailContainer {
+    padding: 30px 10px;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    .formInputFlexFields
+    div
+    input {
+    padding: 2px;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    div
+    #contactUsFormMessage {
+    padding: 2px;
+  }
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    .formInputFlexFields
+    div
+    input,
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    div
+    #contactUsFormMessage,
+  .contactUsContainer
+    .contactUsEmailContainer
+    .contactUsEmailWrapper
+    .emailJsContainer
+    .emailJsWrapper
+    .contactUsForm
+    div
+    .errMsg {
+    font-size: 0.9rem;
   }
 }
