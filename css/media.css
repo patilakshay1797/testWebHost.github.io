@@ -73,12 +73,12 @@
     position: relative;
     top: 15px;
     left: 15px;
-    height: 50px;
-    width: 100px;
+    height: 57px;
+    width: 114px;
   }
   .headLogoImage {
-    height: 50px;
-    width: 100px;
+    height: 57px;
+    width: 114px;
     top: 15px;
     left: 15px;
   }
@@ -277,7 +277,7 @@
     font-size: 1rem;
   }
   .footerContainer .footerContactDetailsWrapper {
-    padding: 0px 25px;
+    padding: 0px 20px;
   }
   .footerContainer .footerContactDetailsWrapper .footerContactDetails {
     color: #ffb703;
@@ -385,17 +385,36 @@
   }
   .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionHeading,
   .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionHeading {
-    font-size: 1.6rem;
-  }
-  .aboutUsInfo .aboutUsMissionVision .aboutUsMainText {
     font-size: 1.4rem;
   }
+  .aboutUsInfo .aboutUsMissionVision .aboutUsMainText {
+    font-size: 1.2rem;
+  }
   .aboutUsInfo .aboutUsMissionVision .aboutUsMainText span {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .aboutUsInfo .aboutUsMissionVision .missionWrapper .missionText,
   .aboutUsInfo .aboutUsMissionVision .visionWrapper .visionText {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  .aboutUsInfo
+    .aboutUsMissionVision
+    .missionWrapper
+    .workExperienceFlow
+    .missionText
+    .mediumText {
+    font-size: 1.2rem !important;
+  }
+  .founderName {
+    font-size: 1.4rem !important;
+  }
+  .aboutUsExperienceImgContainer .largeText {
+    font-size: 1.4rem !important;
+  }
+  .aboutUsInfo .aboutUsMissionVision .missionWrapper,
+  .aboutUsInfo .aboutUsMissionVision .visionWrapper,
+  .aboutUsInfo .aboutUsMissionVision .aboutUsMainText {
+    padding: 8px;
   }
   .aboutUsInfo .aboutUsExperienceImgContainer {
     width: 100%;
@@ -408,6 +427,9 @@
     margin: 50px auto;
     margin-bottom: 0;
     justify-content: left;
+  }
+  .projectsContainer .allProjectsContainer span {
+    left: 0;
   }
   .contactUsWays {
     flex-direction: column;
@@ -528,11 +550,23 @@
   .projectHomeImgInfo .projectSubInfo {
     font-size: 0.8rem;
   }
+  .projectsContainer .projectsHeading {
+    text-align: center;
+  }
   .projectsHomeContainer .projectsHomeHeadingText {
     font-size: 1.2rem !important;
   }
   .projectsHomeContainer .projectsHomeHeadingText .ourProjects {
     font-size: 2rem !important;
+  }
+  .projectsContainer .allProjectsContainer span .proTypeSubInfo {
+    font-size: 1.6rem;
+  }
+  .projectsContainer .projectsHeading .projectSubTitle {
+    font-size: 1rem;
+  }
+  .projectsContainer .allProjectsContainer span .proTypeSubInfo {
+    font-size: 0.8rem;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -540,6 +574,17 @@
     .swiper-slide
     .slideHeading {
     font-size: 1rem !important;
+  }
+  .projectsContainer .allProjectsContainer span {
+    font-size: 1.2rem;
+  }
+  .allProjects .widthIssueTempFix,
+  .projectsContainer
+    .allProjectsContainer
+    .proCommercial
+    .allProjects
+    .widthIssueTempFix {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 650px) {
@@ -551,6 +596,9 @@
   }
   .projectsHomeContainer .swiperContainer .swiper .swiper-pagination {
     bottom: -3px;
+  }
+  .homeProCounterContainer {
+    gap: 20px;
   }
   .homeViewAllProjectsBtnWrapper.projectsSliderSection {
     margin-top: 10px;

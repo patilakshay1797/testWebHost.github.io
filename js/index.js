@@ -9,6 +9,7 @@ async function onLaunch() {
 
   document.querySelector("main").innerHTML = homeHtml;
   addEventListenerOnHomeCarasoualButtons();
+  intersectionObserverForCounter();
   const headerResponse = await fetch("./html/HeaderDesktop.html");
   const headerHtml = await headerResponse.text();
   document.querySelector("header").innerHTML = headerHtml;
@@ -66,6 +67,7 @@ async function handleNavBarOptionClick(e) {
     document.querySelector("main").innerHTML = homeHtml;
     addEventListnerOnViewAllProjectsButton();
     addEventListenerOnHomeCarasoualButtons();
+    intersectionObserverForCounter();
     activeNavOption = "Home.html";
     // loadPageIfNotLoaded("home");
   } else if (
@@ -77,6 +79,7 @@ async function handleNavBarOptionClick(e) {
     document.querySelector("main").innerHTML = projectsHtml;
     loadProjects();
     addEventListnerOnViewAllProjectsButton();
+    intersectionObserverForCounter();
     activeNavOption = "Projects.html";
   } else if (
     e.target.classList.contains("contactUsNavButton") ||
@@ -272,11 +275,11 @@ function ObserverFunc() {
 function loadProjects() {
   const allProjcetsData = [
     {
-      projectType: "Residential Banglow",
+      projectType: "Residential Bungalow",
       type: "Banglow",
       client: "Ar. Atul Urne",
       architect: "Design Ethics",
-      project: "At nanded City, Rhythm-I, Pune.",
+      project: "Nanded City, Rhythm-I, Pune.",
       area: "2860 Sq.ft.",
       floors: "[Ground + 1]",
       url: "../assets/images/AtulUrne1.PNG",
@@ -284,7 +287,7 @@ function loadProjects() {
         "We design minimum column with max span of beam and 3.0m cantilever beam at from side.",
     },
     {
-      projectType: "Residential Banglow",
+      projectType: "Residential Bungalow",
       type: "Banglow",
       client: "Mr. Praveen Shinde",
       architect: "Design Ethics",
@@ -296,7 +299,7 @@ function loadProjects() {
         "We provide sectional details at each side of view for better clarity to contractor for the work.",
     },
     {
-      projectType: "Residential Banglow",
+      projectType: "Residential Bungalow",
       type: "Banglow",
       client: "Mr. Babasaheb Lokhande",
       architect: "Design Ethics",
@@ -308,7 +311,7 @@ function loadProjects() {
         "We design sloping slab and inclined concrete wall as per the view.",
     },
     {
-      projectType: "Residential Banglow",
+      projectType: "Residential Bungalow",
       type: "Banglow",
       client: "Mr. Kestikar",
       architect: "Ar. Atul Urne",
@@ -320,8 +323,8 @@ function loadProjects() {
         "Front elevation details and we design RCC planters box and pergolas.",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Mr. Suraj Purohit",
       architect: "Ar. Deepak Chavan",
       project: "At New Sangavi, Pune.",
@@ -331,8 +334,8 @@ function loadProjects() {
       descreption: "we design floating Column at corner side.",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Om Sai Developer",
       architect: "Ar. Shubham Kotwal",
       project: "At Shirval, Pune.",
@@ -342,8 +345,8 @@ function loadProjects() {
       descreption: "we design floating column for this building.",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Shitole Developer",
       architect: "Ar. Deepak Chavan",
       project: "At Mahalunje, Pune.",
@@ -352,8 +355,8 @@ function loadProjects() {
       url: "../assets/images/ShitoleDevelopers1.PNG",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Patil Developers",
       architect: "Ar. Sneha Khuncha",
       project: "At Bhusawal.",
@@ -362,8 +365,8 @@ function loadProjects() {
       url: "../assets/images/PatilDevelopers1.PNG",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Patil Developers",
       architect: "Ar. Sneha Khuncha",
       project: "At Bhusawal.",
@@ -372,7 +375,7 @@ function loadProjects() {
       url: "../assets/images/PatilDevelopers2.PNG",
     },
     {
-      projectType: "Residential Banglow",
+      projectType: "Residential Bungalow",
       type: "Banglow",
       client: "Mr. Ingawale",
       architect: "Ar. Atul Urne",
@@ -382,8 +385,8 @@ function loadProjects() {
       url: "../assets/images/Ingawale1.PNG",
     },
     {
-      projectType: "Residential Banglow",
-      type: "Banglow",
+      projectType: "Residential Building",
+      type: "Residential",
       client: "Khedekar Developer",
       architect: "Ar. Shubham Kotalwar",
       project: "At Kothrud, Pune.",
@@ -566,13 +569,13 @@ function loadProjects() {
   ).style.display = "none";
   document.querySelector(
     `.projectsContainer .allProjectsContainer .proResidential .allProjects`
-  ).style.display = "block";
+  ).style.display = "flex";
   document.querySelector(
     `.projectsContainer .allProjectsContainer .proCommercial .allProjects`
   ).style.display = "none";
   document.querySelector(
     `.projectsContainer .allProjectsContainer .proCommercial .allProjects`
-  ).style.display = "block";
+  ).style.display = "flex";
   // htmlToAdd += "</div>";
   // const documentNode = parser.parseFromString(htmlToAdd, "text/html");
   // const addToElement = document.querySelector(
@@ -584,48 +587,35 @@ function loadProjects() {
   // );
   const listOfProjectTypes = ["proBungalow", "proResidential", "proCommercial"];
   listOfProjectTypes.forEach((proClass) => {
+    document.querySelector(
+      `.projectsContainer .allProjectsContainer .${proClass} span i`
+    ).style.rotate = "90deg";
     document
       .querySelector(
         `.projectsContainer .allProjectsContainer .${proClass} span`
       )
       .addEventListener("click", (e) => {
         if (
-          document
-            .querySelector(
-              `.projectsContainer .allProjectsContainer .${proClass} span i`
-            )
-            .classList.contains("fa-minus")
+          document.querySelector(
+            `.projectsContainer .allProjectsContainer .${proClass} span i`
+          ).style.rotate === "90deg"
         ) {
-          document
-            .querySelector(
-              `.projectsContainer .allProjectsContainer .${proClass} span i`
-            )
-            .classList.remove("fa-minus");
-          document
-            .querySelector(
-              `.projectsContainer .allProjectsContainer .${proClass} span i`
-            )
-            .classList.add("fa-plus");
+          document.querySelector(
+            `.projectsContainer .allProjectsContainer .${proClass} span i`
+          ).style.rotate = "0deg";
           document.querySelector(
             `.projectsContainer .allProjectsContainer .${proClass} .allProjects`
           ).style.display = "none";
           document.querySelector(
             `.projectsContainer .allProjectsContainer .${proClass} .dotsContainer`
-          ).style.display = "block";
+          ).style.display = "flex";
         } else {
-          document
-            .querySelector(
-              `.projectsContainer .allProjectsContainer .${proClass} span i`
-            )
-            .classList.remove("fa-plus");
-          document
-            .querySelector(
-              `.projectsContainer .allProjectsContainer .${proClass} span i`
-            )
-            .classList.add("fa-minus");
+          document.querySelector(
+            `.projectsContainer .allProjectsContainer .${proClass} span i`
+          ).style.rotate = "90deg";
           document.querySelector(
             `.projectsContainer .allProjectsContainer .${proClass} .allProjects`
-          ).style.display = "block";
+          ).style.display = "flex";
           document.querySelector(
             `.projectsContainer .allProjectsContainer .${proClass} .dotsContainer`
           ).style.display = "none";
@@ -666,6 +656,7 @@ onLaunch().then(() => {
     ele.addEventListener("click", handleNavBarOptionClick);
   });
   addEventListnerOnViewAllProjectsButton();
+  scrollToTop();
 });
 
 function addEventListnerOnViewAllProjectsButton() {
@@ -677,7 +668,7 @@ function addEventListnerOnViewAllProjectsButton() {
   });
 }
 
-window.addEventListener("scroll", (e) => console.log(e), { passive: true });
+// window.addEventListener("scroll", (e) => console.log(e), { passive: true });
 
 function hideLoadingScreen() {
   setTimeout(() => {
@@ -793,4 +784,48 @@ function addEventListenerOnHomeCarasoualButtons() {
       },
     },
   });
+}
+
+function intersectionObserverForCounter() {
+  let options = {
+    // rootMargin: "-20px",
+    threshold: 0.2,
+  };
+  function callback(e) {
+    e.forEach((e) => {
+      if (e.isIntersecting) {
+        animateValue(e.target, 0, 18, 4000);
+      }
+    });
+  }
+  function callback2(e) {
+    e.forEach((e) => {
+      if (e.isIntersecting) {
+        animateValue(e.target, 0, 165990, 4000);
+      }
+    });
+  }
+  const observer = new IntersectionObserver(callback, options);
+  const totalPro = document.querySelector(
+    ".homeProCounterContainer .totalProjects .pro .value"
+  );
+  const observer2 = new IntersectionObserver(callback2, options);
+  const totalProArea = document.querySelector(
+    ".homeProCounterContainer .totalProArea .pro .value"
+  );
+  observer.observe(totalPro);
+  observer2.observe(totalProArea);
+}
+
+function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
 }
