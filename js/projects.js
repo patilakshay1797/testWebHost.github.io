@@ -2,6 +2,7 @@ function loadProjects() {
   const allProjcetsData = [
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Ar. Atul Urne",
       architect: "Design Ethics",
       project: "At nanded City, Rhythm-I, Pune.",
@@ -13,6 +14,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Mr. Praveen Shinde",
       architect: "Design Ethics",
       project: "At nanded City, Rhythm-I, Pune.",
@@ -24,6 +26,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Mr. Babasaheb Lokhande",
       architect: "Design Ethics",
       project: "At nanded City, Rhythm-II, Pune.",
@@ -35,6 +38,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Mr. Kestikar",
       architect: "Ar. Atul Urne",
       project: "At nanded City, Pune.",
@@ -46,6 +50,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Mr. Suraj Purohit",
       architect: "Ar. Deepak Chavan",
       project: "At New Sangavi, Pune.",
@@ -56,6 +61,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Om Sai Developer",
       architect: "Ar. Shubham Kotwal",
       project: "At Shirval, Pune.",
@@ -66,6 +72,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Shitole Developer",
       architect: "Ar. Deepak Chavan",
       project: "At Mahalunje, Pune.",
@@ -75,6 +82,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Patil Developers",
       architect: "Ar. Sneha Khuncha",
       project: "At Bhusawal.",
@@ -84,6 +92,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Patil Developers",
       architect: "Ar. Sneha Khuncha",
       project: "At Bhusawal.",
@@ -93,6 +102,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Mr. Ingawale",
       architect: "Ar. Atul Urne",
       project: "At Nanded City, Pune.",
@@ -102,6 +112,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Banglow",
+      type: "Banglow",
       client: "Khedekar Developer",
       architect: "Ar. Shubham Kotalwar",
       project: "At Kothrud, Pune.",
@@ -111,6 +122,7 @@ function loadProjects() {
     },
     {
       projectType: "Lounging Building",
+      type: "Commercial",
       client: "Syandri Developer",
       architect: "Ar. Atul Urne",
       project: "At Nagav, Alibag",
@@ -120,6 +132,7 @@ function loadProjects() {
     },
     {
       projectType: "Residential Building",
+      type: "Residential",
       client: "Mr. Vaibhav",
       architect: "Ar. Vaibhav Dhorgude",
       project: "At Raygad",
@@ -131,8 +144,18 @@ function loadProjects() {
 
   const parser = new DOMParser();
 
+  const banglowProjects = allProjcetsData.filter(
+    (pro) => pro.type === "Banglow"
+  );
+  const residentialProjects = allProjcetsData.filter(
+    (pro) => pro.type === "Residential"
+  );
+  const commercialProjects = allProjcetsData.filter(
+    (pro) => pro.type === "Commercial"
+  );
+
   let flexDirectionReverse = false;
-  allProjcetsData.forEach((project) => {
+  banglowProjects.forEach((project) => {
     let htmlToAdd = "";
     htmlToAdd += `<div class="pro ${
       flexDirectionReverse ? "reverseFlex" : null
@@ -169,7 +192,99 @@ function loadProjects() {
     flexDirectionReverse = !flexDirectionReverse;
     const documentNode = parser.parseFromString(htmlToAdd, "text/html");
     const addToElement = document.querySelector(
-      ".projectsContainer .allProjectsContainer .allProjects div"
+      ".projectsContainer .allProjectsContainer .proBungalow .allProjects div"
+    );
+
+    addToElement.appendChild(
+      documentNode.documentElement.querySelector("body div")
+    );
+  });
+
+  flexDirectionReverse = false;
+  residentialProjects.forEach((project) => {
+    let htmlToAdd = "";
+    htmlToAdd += `<div class="pro ${
+      flexDirectionReverse ? "reverseFlex" : null
+    }">
+        <div class="proImg ${
+          flexDirectionReverse
+            ? "intersectionAnimationRightLeft"
+            : "intersectionAnimationLeftRight"
+        }"><img src="${project.url}"></div>
+        <div class="proInfo ${
+          flexDirectionReverse
+            ? "intersectionAnimationLeftRight"
+            : "intersectionAnimationRightLeft"
+        }">
+          <div class="proType proSpace"><div><i class="fa-solid fa-bars-progress"></i></div><div><div class="proInfoTitle">Project Type</div><div class="proInfoValue">${
+            project.projectType
+          }</div></div></div>
+          <div class="proClient proSpace"><div><i class="fa-solid fa-user"></i></div><div><div class="proInfoTitle">Client</div><div class="proInfoValue">${
+            project.client
+          }</div></div></div>
+          <div class="proArchitect proSpace"><div><i class="fa-solid fa-building-user"></i></div><div><div class="proInfoTitle">Architect</div><div class="proInfoValue">${
+            project.architect
+          }</div></div></div>
+          <div class="proLocation proSpace"><div><i class="fa-solid fa-location-dot"></i></div><div><div class="proInfoTitle">Location</div><div class="proInfoValue">${
+            project.project
+          }</div></div></div>
+          <div class="proArea proSpace"><div><i class="fa-solid fa-ruler-combined"></i></div><div><div class="proInfoTitle">Project Area</div><div class="proInfoValue">${
+            project.area
+          }</div></div></div>`;
+    if (project?.descreption) {
+      htmlToAdd += `<div class="proDescription proSpace"><div><i class="fa-solid fa-rectangle-list"></i></i></div><div><div class="proInfoTitle">Description</div><div class="proInfoValue">${project.descreption}</div></div>`;
+    }
+    htmlToAdd += "</div></div></div>";
+    flexDirectionReverse = !flexDirectionReverse;
+    const documentNode = parser.parseFromString(htmlToAdd, "text/html");
+    const addToElement = document.querySelector(
+      ".projectsContainer .allProjectsContainer .proResidential .allProjects div"
+    );
+
+    addToElement.appendChild(
+      documentNode.documentElement.querySelector("body div")
+    );
+  });
+
+  flexDirectionReverse = false;
+  commercialProjects.forEach((project) => {
+    let htmlToAdd = "";
+    htmlToAdd += `<div class="pro ${
+      flexDirectionReverse ? "reverseFlex" : null
+    }">
+        <div class="proImg ${
+          flexDirectionReverse
+            ? "intersectionAnimationRightLeft"
+            : "intersectionAnimationLeftRight"
+        }"><img src="${project.url}"></div>
+        <div class="proInfo ${
+          flexDirectionReverse
+            ? "intersectionAnimationLeftRight"
+            : "intersectionAnimationRightLeft"
+        }">
+          <div class="proType proSpace"><div><i class="fa-solid fa-bars-progress"></i></div><div><div class="proInfoTitle">Project Type</div><div class="proInfoValue">${
+            project.projectType
+          }</div></div></div>
+          <div class="proClient proSpace"><div><i class="fa-solid fa-user"></i></div><div><div class="proInfoTitle">Client</div><div class="proInfoValue">${
+            project.client
+          }</div></div></div>
+          <div class="proArchitect proSpace"><div><i class="fa-solid fa-building-user"></i></div><div><div class="proInfoTitle">Architect</div><div class="proInfoValue">${
+            project.architect
+          }</div></div></div>
+          <div class="proLocation proSpace"><div><i class="fa-solid fa-location-dot"></i></div><div><div class="proInfoTitle">Location</div><div class="proInfoValue">${
+            project.project
+          }</div></div></div>
+          <div class="proArea proSpace"><div><i class="fa-solid fa-ruler-combined"></i></div><div><div class="proInfoTitle">Project Area</div><div class="proInfoValue">${
+            project.area
+          }</div></div></div>`;
+    if (project?.descreption) {
+      htmlToAdd += `<div class="proDescription proSpace"><div><i class="fa-solid fa-rectangle-list"></i></i></div><div><div class="proInfoTitle">Description</div><div class="proInfoValue">${project.descreption}</div></div>`;
+    }
+    htmlToAdd += "</div></div></div>";
+    flexDirectionReverse = !flexDirectionReverse;
+    const documentNode = parser.parseFromString(htmlToAdd, "text/html");
+    const addToElement = document.querySelector(
+      ".projectsContainer .allProjectsContainer .proCommercial .allProjects div"
     );
 
     addToElement.appendChild(

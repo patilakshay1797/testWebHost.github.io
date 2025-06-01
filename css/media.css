@@ -15,6 +15,9 @@
   header {
     display: none;
   }
+  .homeContainer .homeCarousel .homeWelcomeContainer {
+    justify-content: end;
+  }
   main {
     padding: 0px 0px 50px 0px;
   }
@@ -70,12 +73,14 @@
     position: relative;
     top: 15px;
     left: 15px;
-    height: 65px;
-    width: 130px;
+    height: 50px;
+    width: 100px;
   }
   .headLogoImage {
-    height: 65px;
-    width: 130px;
+    height: 50px;
+    width: 100px;
+    top: 15px;
+    left: 15px;
   }
   .homeContainer .homeCarousel .homeImgContainer .welcomeText {
     font-size: 1.2rem;
@@ -185,7 +190,8 @@
     .pro
     .proInfo
     .proSpace {
-    padding: 7px;
+    border: none;
+    padding: 5px;
   }
   .projectsContainer
     .allProjectsContainer
@@ -196,7 +202,7 @@
     .proSpace
     div
     i {
-    width: 25px;
+    width: 26px;
     padding: 0px 12px;
     font-size: 1.2rem;
     margin-right: 26px;
@@ -221,6 +227,12 @@
     .proSpace
     .proInfoValue {
     font-size: 1rem;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro:hover {
+    transform: none;
+  }
+  .projectsContainer .allProjectsContainer .allProjects div .pro {
+    gap: 20px;
   }
 
   footer {
@@ -537,6 +549,12 @@
   .projectsHomeContainer .swiperContainer .swiper-slide {
     padding: 10px;
   }
+  .projectsHomeContainer .swiperContainer .swiper .swiper-pagination {
+    bottom: -3px;
+  }
+  .homeViewAllProjectsBtnWrapper.projectsSliderSection {
+    margin-top: 10px;
+  }
   .projectsHomeContainer .swiperContainer .swiper-slide .projectsTypeWise {
     flex-wrap: wrap;
     gap: 10px;
@@ -547,7 +565,7 @@
     .swiper-slide
     .projectsTypeWise
     .projectInfoWrapper:nth-child(1) {
-    width: 100%;
+    width: 85%;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -559,7 +577,7 @@
     .swiper-slide
     .projectsTypeWise
     .projectInfoWrapper:nth-child(3) {
-    width: calc(50% - 5px);
+    width: calc(50% - 25px);
   }
   .projectHomeImgInfo {
     padding: 12px;
@@ -603,14 +621,12 @@
     .proImg {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    min-width: 90%;
+    max-width: 90%;
   }
 }
 
 @media screen and (max-width: 407px) {
-  .homeContainer .homeCarousel .homeWelcomeContainer {
-    justify-content: end;
-  }
   .footerSocialMediaContainer .socialMediaLinks .socialMediaIconWrapper {
     width: 2.2rem;
     height: 2.2rem;

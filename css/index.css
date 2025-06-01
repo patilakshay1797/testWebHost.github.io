@@ -182,10 +182,10 @@ main {
 }
 .homeContainer .homeCarousel .homeImgContainer img {
   position: sticky;
-  top: 115px;
-  left: 65px;
-  height: 120px;
-  width: 240px;
+  top: 90px;
+  left: 40px;
+  height: 90px;
+  width: 180px;
   z-index: 1;
 }
 .burgerIconBtn {
@@ -222,7 +222,7 @@ main {
   animation-duration: 1s;
 }
 .homeContainer .homeCarousel .homeWelcomeContainer .welcomeText {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 700;
 
   color: #ffb703;
@@ -230,7 +230,7 @@ main {
   text-align: center;
 }
 .homeContainer .homeCarousel .homeWelcomeContainer .purposeText {
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-weight: 700;
   margin-bottom: 30px;
   text-align: center;
@@ -240,7 +240,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-align: center;
@@ -866,6 +866,32 @@ footer {
   margin-top: 25px;
   font-weight: 400;
 }
+.projectsContainer .allProjectsContainer span {
+  position: relative;
+  left: 15%;
+  font-size: 1.4rem;
+  color: #154d8a;
+  margin-bottom: 25px;
+  cursor: pointer;
+  z-index: 1;
+}
+/* .projectsContainer .allProjectsContainer span:after {
+  content: "";
+  background: #c12a7e;
+  position: absolute;
+  bottom: -3px;
+  left: 20%;
+  width: 40%;
+  height: 2px;
+} */
+.projectsContainer .allProjectsContainer span i {
+  margin: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #c12a7e;
+  border-radius: 50%;
+  padding: 3px;
+  color: #ffb703;
+}
 .projectsContainer .allProjectsContainer .allProjects {
   display: flex;
   align-items: center;
@@ -875,8 +901,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 0px;
-  gap: 50px;
+  padding: 30px 0px;
+  gap: 40px;
 }
 .projectsContainer .allProjectsContainer .allProjects div .pro.reverseFlex {
   flex-direction: row-reverse;
@@ -886,7 +912,7 @@ footer {
 }
 .projectsContainer .allProjectsContainer .allProjects div .pro .proImg img {
   width: 100%;
-  height: 400px;
+  height: 330px;
   border-radius: 30px;
   box-shadow: 64px 64px 160px -40px rgba(0, 0, 0, 0.24);
   transition: transform 0.3s ease-in-out;
@@ -894,7 +920,8 @@ footer {
 .projectsContainer .allProjectsContainer .allProjects div .pro .proInfo {
   border: 1px solid #12223b30;
   border-radius: 30px;
-  width: 30%;
+  max-width: 30%;
+  min-width: 20%;
   opacity: 0;
 }
 .projectsContainer .allProjectsContainer .allProjects div .pro {
@@ -911,7 +938,7 @@ footer {
   .pro
   .proInfo
   .proSpace {
-  padding: 10px;
+  padding: 7px;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #12223b30;
@@ -933,7 +960,7 @@ footer {
   .proInfo
   .proSpace
   .proInfoTitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #667282;
   margin-bottom: 5px;
 }
@@ -945,7 +972,7 @@ footer {
   .proInfo
   .proSpace
   .proInfoValue {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #000;
 }
 .projectsContainer
@@ -957,11 +984,16 @@ footer {
   .proSpace
   div
   i {
-  width: 32px;
-  padding: 0 20px;
-  font-size: 1.6rem;
+  width: 26px;
+  padding: 0 14px;
+  font-size: 1.3rem;
   color: #ffb703;
-  margin-right: 30px;
+  margin-right: 26px;
+}
+.projectsContainer .allProjectsContainer .dotsContainer {
+  display: none;
+  position: relative;
+  left: 23%;
 }
 /* projects css start */
 .contactUsContainer {
