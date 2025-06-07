@@ -291,7 +291,7 @@ function loadProjects() {
       type: "Banglow",
       client: "Mr. Praveen Shinde",
       architect: "Design Ethics",
-      project: "At nanded City, Rhythm-I, Pune.",
+      project: "Nanded City, Rhythm-I, Pune.",
       area: "3100 Sq.ft.",
       floors: "[Ground + 1]",
       url: "../assets/images/PraveenShindeBunglow.PNG",
@@ -338,7 +338,7 @@ function loadProjects() {
       type: "Residential",
       client: "Om Sai Developer",
       architect: "Ar. Shubham Kotwal",
-      project: "At Shirval, Pune.",
+      project: "Shirval, Pune.",
       area: "16800 Sq.ft.",
       floors: "[Parking + 5]",
       url: "../assets/images/OmSaiDevelopers1.PNG",
@@ -349,7 +349,7 @@ function loadProjects() {
       type: "Residential",
       client: "Shitole Developer",
       architect: "Ar. Deepak Chavan",
-      project: "At Mahalunje, Pune.",
+      project: "Mahalunje, Pune.",
       area: "21630 Sq.ft.",
       floors: "[Parking + 5]",
       url: "../assets/images/ShitoleDevelopers1.PNG",
@@ -794,18 +794,29 @@ function intersectionObserverForCounter() {
   function callback(e) {
     e.forEach((e) => {
       if (e.isIntersecting) {
-        animateValue(e.target, 0, 18, 4000);
+        animateValue(e.target, 0, 18, 1500);
       }
     });
   }
   function callback2(e) {
     e.forEach((e) => {
       if (e.isIntersecting) {
-        animateValue(e.target, 0, 165990, 4000);
+        animateValue(e.target, 0, 165990, 1500);
+      }
+    });
+  }
+  function callback3(e) {
+    e.forEach((e) => {
+      if (e.isIntersecting) {
+        animateValue(e.target, 0, 12, 1500);
       }
     });
   }
   const observer = new IntersectionObserver(callback, options);
+  const totalProClients = document.querySelector(
+    ".homeProCounterContainer .totalProClients .pro .value"
+  );
+  const observer3 = new IntersectionObserver(callback3, options);
   const totalPro = document.querySelector(
     ".homeProCounterContainer .totalProjects .pro .value"
   );
@@ -815,6 +826,7 @@ function intersectionObserverForCounter() {
   );
   observer.observe(totalPro);
   observer2.observe(totalProArea);
+  observer3.observe(totalProClients);
 }
 
 function animateValue(obj, start, end, duration) {
