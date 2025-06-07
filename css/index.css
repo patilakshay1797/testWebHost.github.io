@@ -928,6 +928,9 @@ footer {
   font-size: 1.4rem;
   color: #667282;
 }
+.projectsContainer .allProjectsContainer {
+  margin-bottom: 25px;
+}
 .projectsContainer .allProjectsContainer span {
   position: relative;
   left: 15%;

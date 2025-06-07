@@ -19,7 +19,7 @@
     justify-content: end;
   }
   main {
-    padding: 0px 0px 50px 0px;
+    padding: 0px;
   }
   .homeContainer {
     width: calc(100%);
@@ -48,6 +48,9 @@
     background-color: #d0a12c;
     border-radius: 5px;
     z-index: 20;
+  }
+  .homeAboutUs {
+    margin: 0px;
   }
   .burgerIconBtn .burgerIconBar {
     height: 4px;
@@ -447,6 +450,7 @@
   .contactUsEmailContainer {
     flex-direction: column;
     height: 830px;
+    padding: 80px 10px;
   }
   .contactUsEmailContainer .contactUsEmailWrapper .contactUsEmailHeadingText {
     font-size: 1.8rem;

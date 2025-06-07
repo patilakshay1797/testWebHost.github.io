@@ -18,6 +18,9 @@ async function onLaunch() {
   const footerHtml = await footerResponse.text();
   document.querySelector("footer").innerHTML = footerHtml;
 
+  document.querySelector(".homeNavButton").style.color = "#ffb703";
+  document.querySelector(".mobileMenuHome").style.color = "#ffb703";
+
   // var script = document.createElement("script"); // create a script DOM node
   // script.src = "../js/home.js";
   // document.head.appendChild(script);
@@ -93,6 +96,68 @@ async function handleNavBarOptionClick(e) {
   if (e.target.classList.contains("mobileMenuOption")) {
     removeOpenMobileMenuClass();
   }
+  switch (activeNavOption) {
+    case "Home.html": {
+      document.querySelector(".homeNavButton").style.color = "#ffb703";
+      document.querySelector(".mobileMenuHome").style.color = "#ffb703";
+      document.querySelector(".aboutUsNavButton");
+      document.querySelector(".aboutUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuAboutUs").style.color = "#fff";
+      document.querySelector(".projectsNavButton");
+      document.querySelector(".projectsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuProjects").style.color = "#fff";
+      document.querySelector(".contactUsNavButton");
+      document.querySelector(".contactUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuContactUs ").style.color = "#fff";
+      break;
+    }
+    case "AboutUs.html": {
+      document.querySelector(".aboutUsNavButton");
+      document.querySelector(".aboutUsNavButton").style.color = "#ffb703";
+      document.querySelector(".mobileMenuAboutUs").style.color = "#ffb703";
+      document.querySelector(".homeNavButton");
+      document.querySelector(".homeNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuHome").style.color = "#fff";
+      document.querySelector(".projectsNavButton");
+      document.querySelector(".projectsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuProjects").style.color = "#fff";
+      document.querySelector(".contactUsNavButton");
+      document.querySelector(".contactUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuContactUs ").style.color = "#fff";
+      break;
+    }
+    case "Projects.html": {
+      document.querySelector(".projectsNavButton");
+      document.querySelector(".projectsNavButton").style.color = "#ffb703";
+      document.querySelector(".mobileMenuProjects").style.color = "#ffb703";
+      document.querySelector(".homeNavButton");
+      document.querySelector(".homeNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuHome").style.color = "#fff";
+      document.querySelector(".aboutUsNavButton");
+      document.querySelector(".aboutUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuAboutUs").style.color = "#fff";
+      document.querySelector(".contactUsNavButton");
+      document.querySelector(".contactUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuContactUs ").style.color = "#fff";
+      break;
+    }
+    case "ContactUs.html": {
+      document.querySelector(".contactUsNavButton");
+      document.querySelector(".contactUsNavButton").style.color = "#ffb703";
+      document.querySelector(".mobileMenuContactUs ").style.color = "#ffb703";
+      document.querySelector(".homeNavButton");
+      document.querySelector(".homeNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuHome").style.color = "#fff";
+      document.querySelector(".aboutUsNavButton");
+      document.querySelector(".aboutUsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuAboutUs").style.color = "#fff";
+      document.querySelector(".projectsNavButton");
+      document.querySelector(".projectsNavButton").style.color = "#000";
+      document.querySelector(".mobileMenuProjects").style.color = "#fff";
+      break;
+    }
+  }
+
   scrollToTop();
 
   ObserverFunc();
