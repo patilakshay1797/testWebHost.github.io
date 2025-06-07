@@ -84,6 +84,7 @@
     width: 114px;
     top: 15px;
     left: 15px;
+    z-index: 100;
   }
   .homeContainer .homeCarousel .homeImgContainer .welcomeText {
     font-size: 1.2rem;
