@@ -820,7 +820,7 @@ function addEventListenerOnHomeCarasoualButtons() {
     },
 
     autoplay: {
-      delay: 30000000,
+      delay: 3000,
     },
 
     breakpoints: {

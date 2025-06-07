@@ -175,6 +175,9 @@
   .projectHomeImgInfo {
     padding: 14px;
   }
+  .projectsContainer .projectsImgContainer {
+    margin-bottom: 20px;
+  }
   .projectHomeImgInfo .projectLocation {
     font-size: 1.2rem;
   }
