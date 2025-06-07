@@ -620,6 +620,8 @@
     .projectsTypeWise
     .projectInfoWrapper:nth-child(1) {
     width: 85%;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -632,6 +634,8 @@
     .projectsTypeWise
     .projectInfoWrapper:nth-child(3) {
     width: calc(50% - 25px);
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .swiper-slide .projectsTypeWise .projectInfoWrapper .projectHomeImgContainer {
     height: 100%;
@@ -650,6 +654,8 @@
     .projectInfoWrapper:nth-child(1) {
     height: 400px;
     width: 100%;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -658,6 +664,8 @@
     .projectInfoWrapper:nth-child(1) {
     height: 400px;
     width: 70%;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -666,6 +674,8 @@
     .projectInfoWrapper:nth-child(1) {
     height: 500px;
     width: 100%;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .projectsHomeContainer
     .swiperContainer
@@ -679,6 +689,8 @@
     .projectInfoWrapper:nth-child(3) {
     width: calc(50% - 5px);
     height: 230px;
+    transition: width 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out;
   }
   .projectHomeImgInfo {
     display: none;
